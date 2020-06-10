@@ -1,9 +1,11 @@
+package numbers;
+
 import java.io.*;
 import java.util.*;
 
 public class wordstonumbers {
 	public static void main (String[] args) throws Exception {
-		System.out.println("Type your sentence (no punctuation) and the number of words on two sepearte lines like so:");
+		System.out.println("Type your sentence (no punctuation) and the number of words on two seperate lines like so:");
 		System.out.println("Lux is a good champion");
 		System.out.println(5);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,11 +30,19 @@ public class wordstonumbers {
 			b = st.nextToken();
 			for (int j = 0; j < b.length(); j++) {
 				char c = b.charAt(j);
-				z = letterconvert(c);
-				ret+=z;
-				ret+= " ";
+				if (c == ',' || c == '\'' || c == '.' || c == '!' || c == '?' || c == '*' || c == '(' || c == ')') {
+					ret+=c;
+				}
+				else {
+					z = letterconvert(c);
+					ret+=z;
+					if (j != b.length()-1 && b.charAt(j+1)!= ',' && b.charAt(j+1) != '\'' && b.charAt(j+1)!= '.' 
+							&& b.charAt(j+1)!= '!' &&  b.charAt(j+1) != '?' && b.charAt(j+1) != '*'
+							&& b.charAt(j+1)!='(' && b.charAt(j+1) !=')')
+						ret+= " ";
+				}
 			}
-			ret += "   ";
+			ret += "    ";
 		}
 		return ret;
 	}
