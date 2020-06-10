@@ -5,7 +5,7 @@ import java.util.*;
 
 public class wordstonumbers {
 	public static void main (String[] args) throws Exception {
-		System.out.println("Type your sentence (no punctuation) and the number of words on two seperate lines like so:");
+		System.out.println("Type your sentence and the number of words on two seperate lines like so:");
 		System.out.println("Lux is a good champion");
 		System.out.println(5);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
